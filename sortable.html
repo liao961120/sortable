@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortable.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
+</head>
+<body>
+
+    <div id="items">
+        <div class="item">item 1</div>
+        <div class="item">item 2</div>
+        <div class="item">item 3</div>
+        <div class="item">item 4</div>
+        <div class="item">item 5</div>
+        <div class="item">item 6</div>
+        <div class="item">item 7</div>
+        <div class="item">item 8</div>
+        <div class="item">item 9</div>
+    </div>
+
+    <script>
+        var el = document.getElementById('items');
+        var sortable = Sortable.create(el, {
+            animation: 300
+        });
+
+        // var lis = document.querySelectorAll('#items > li');
+        // lis.forEach(e => {
+        //     e.addEventListener("drag", (event) => {
+        //         console.log("drag")
+        //         e.classList.add("shadow")
+        //     })
+        // })
+    </script>
+
+    <style>
+        #items {
+            width: 375px;
+            margin: 50px auto;
+            padding: 10px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            
+        }
+        #items > .item {
+            background-color: dodgerblue;
+            color: white;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+        .sortable-drag {
+            box-shadow: 10px 5px 5px gray;
+        }
+        .sortable-ghost {
+            background-color: transparent !important;
+        }
+    </style>
+    
+</body>
+</html>
